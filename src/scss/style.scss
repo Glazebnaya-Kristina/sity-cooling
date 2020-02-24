@@ -1,0 +1,25 @@
+@import "helpers/variables";
+@import "helpers/container-mixins";
+@import "helpers/mixins";
+@import "helpers/animations";
+@import "helpers/sprite";
+
+// поключения глобальных библиотек и хелперов
+@import "common/fonts";
+@import "common/fontello";
+
+@import "common/common";
+@import "templates/header";
+@import "templates/footer";
+
+// поключения глобальные блоков
+@import "blocks/button";
+@import "blocks/navigation";
+@import "blocks/social";
+@import "blocks/logo";
+@import "blocks/menu-burger";
+@import "blocks/title";
+@import "blocks/form";
+@import "blocks/modal";
+@import "blocks/close";
+@import "blocks/breadcrumbs";

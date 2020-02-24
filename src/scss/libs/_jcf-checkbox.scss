@@ -1,0 +1,47 @@
+/* checkbox */
+.jcf-checkbox {
+  vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  background: #fff;
+  border: 1px solid $color-blue;
+  height: 17px;
+  width: 18px;
+  border-radius: 4px;
+}
+.jcf-checkbox span{
+  position:absolute;
+  display:none;
+  height: 16px;
+  width: 18px;
+  top:50%;
+  left:50%;
+  &:before{
+    @include pseudo;
+    content: '\e82a';
+    font-family: "fontello";
+    font-size: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 10px;
+    color: $color-blue;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865483, M12=0.7071067811865467, M21=-0.7071067811865467, M22=0.7071067811865483, SizingMethod='auto expand')";
+  }
+}
+:root .jcf-checkbox span {    margin: -7px 0 0 -10px;}
+
+.jcf-checkbox input[type="checkbox"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+}
+.jcf-checkbox.jcf-checked span{display:block;}
+
+

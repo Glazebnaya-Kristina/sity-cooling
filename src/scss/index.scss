@@ -1,0 +1,10 @@
+// подключение блоков
+//@import "blocks/";
+@import "templates/header";
+@import "templates/footer";
+
+// подключение секций
+@import "section/index/about-us";
+@import "section/index/main-banner";
+
+

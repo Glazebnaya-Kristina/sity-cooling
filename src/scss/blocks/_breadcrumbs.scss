@@ -1,0 +1,42 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+
+.breadcrumbs{
+  $block-name:                &; // #{$block-name}__element
+
+
+  @include ul-reset;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+
+  li{
+    position: relative;
+    &:not(:first-child){
+      margin-left: 16px;
+      &:after{
+        @include pseudo;
+        left: -13px;
+        top: 58%;
+        width: 10px;
+        height: 1px;
+        //background-color: $text-color-gray-lighter;
+      }
+    }
+    a{
+      //color: $text-color-gray-lighter;
+      font-weight: 100;
+      &:hover,
+      &:focus{
+        outline: none;
+        //color: $color-gold;
+      }
+    }
+    span{
+      //color: $text-color-breadcrumsSpan;
+      //border-bottom: 1px solid $text-color-gray-lighter;
+      font-weight: 400;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+/* scrollbars */
+.jcf-scrollable-wrapper {
+  box-sizing: content-box;
+  position: relative;
+}
+.jcf-scrollbar-vertical {
+  position: absolute;
+  cursor: default;
+  background-color: #e8e8e8;
+  width: 11px;
+  bottom: 0;
+  right: 15px;
+  top: 0;
+}
+.jcf-scrollbar-vertical .jcf-scrollbar-dec,
+.jcf-scrollbar-vertical .jcf-scrollbar-inc {
+  height: 15px;
+  width: 11px;
+  left: 0;
+  top: 0;
+  background-color: #e8e8e8;
+}
+.jcf-scrollbar-vertical .jcf-scrollbar-inc {
+  top: auto;
+  bottom: 0;
+}
+.jcf-scrollbar-vertical .jcf-scrollbar-handle {
+  background-color: #d0d0d0;
+  height: 1px;
+  width: 11px;
+}
+
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-handle {
+  visibility: hidden;
+}
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-dec,
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-inc {
+  background: #e3e3e3;
+}

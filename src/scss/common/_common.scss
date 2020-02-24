@@ -1,0 +1,290 @@
+@import "../helpers/variables";
+@import "../helpers/container-mixins";
+@import "../helpers/mixins";
+@import "../helpers/animations";
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page {
+  $block-name:                &; // #{$block-name}__element
+
+  box-sizing: border-box;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  word-break: break-word;
+  font-family: $font-family;
+  font-size: 14px;
+  line-height: $line-height;
+  text-align: left;
+  //color: $text-color-gray-dark2;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  @media (min-width: $screen-lg) {
+    font-size: $font-size;
+  }
+}
+
+.hidden{
+  overflow: hidden;
+}
+
+.anchor{
+  @include hide-text;
+}
+
+[tabindex='-1']:focus {
+  outline: 0 !important;
+}
+
+// Коррекция для кликабельных элементов с указанной ролью в iOS
+[role='button'] {
+  cursor: pointer;
+}
+
+// Мы любим Сафари (на самом деле, нет).
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button { /* псевдо что-то, что отвечает за кнопку очистки */
+  -webkit-appearance: none; /* без сброса оформление не применится */
+  width: 0; /* размеры кастомного крестика */
+  height: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  display: inline-block;
+}
+
+a,
+button,
+[role='button'],
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation; // Стилевая коррекция 300ms задержки (для поддерживающих браузеров)
+  margin: 0;  // Убираем margin в Firefox и Safari
+  font: inherit;
+  color: inherit;
+}
+
+button,
+input {
+  overflow: visible;    // Покажем торчащее в Edge
+  text-transform: none; // Уберём наследование text transform в Firefox
+  color: inherit;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; // Коррекция проблем стилизации для Safari
+  //font: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox; // Коррекция для Mobile Safari (https://github.com/twbs/bootstrap/issues/11266)
+}
+
+textarea {
+  overflow: auto;   // Удаление верт. скролла в IE.
+  //resize: vertical; // Правильное изменение размеров
+  resize: none;
+}
+
+svg {
+  fill: currentColor;
+
+  a &,
+  button & {
+    pointer-events: none; // Мы любим Edge, это браузер! (почти)
+  }
+
+  &:not(:root) {
+    overflow: hidden; // Скрыть выступающее за границы в IE
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  background-color: transparent;
+  transition: all $transition-time;
+}
+
+hr {
+  box-sizing: content-box; // Проблема Firefox
+  height: 0;               // Проблема Firefox
+  overflow: visible;       // Проблема Edge и IE
+  margin-top: $typo-margin-vertical * 2;
+  margin-bottom: $typo-margin-vertical * 2;
+  border: 0;
+  border-top: 1px solid $field-border-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-family: $font-family;
+  font-weight: 700;
+  color: currentColor;
+}
+
+p,
+ul,
+ol,
+dl,
+table,
+blockquote,
+pre,
+address,
+figure {
+  margin-top: 0;
+  margin-bottom: $typo-margin-vertical;
+}
+
+p {
+  // http://clagnut.com/blog/2395
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+ul,
+ol {
+  margin-bottom: $typo-margin-vertical;
+  padding-left: 1.5em;
+
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+li {
+  line-height: inherit;
+}
+
+small {
+  font-size: $font-size-sm;
+}
+
+sub,
+sup {
+  font-size: $font-size-sm;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+blockquote {
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+code,
+kbd,
+pre {
+  font-family: $font-family--monospace;
+}
+
+code {
+  padding: 0.06em 0.3em;
+  color: $text-color;
+  background-color: rgba(#000, 0.08);
+  border-radius: $field-border-radius;
+}
+
+kbd {
+  padding: 0.06em 0.3em;
+  color: $text-color;
+  background-color: $gray-lightest;
+  border-radius: $field-border-radius;
+
+  kbd {
+    padding: 0;
+  }
+}
+
+pre {
+  display: block;
+  width: 100%;
+  margin-bottom: $typo-margin-vertical;
+  overflow-x: auto;
+  tab-size: 2;
+  background-color: rgba(#000, 0.08);
+
+  code {
+    background: transparent;
+  }
+}

@@ -1,0 +1,147 @@
+@import "variables";
+
+// миксины для form
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin placeholder-hidden {
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+  &:focus::-moz-placeholder {
+    color: transparent;
+  }
+  &:focus:-moz-placeholder {
+    color: transparent;
+  }
+  &:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+}
+
+@mixin placeholder-not-hidden {
+  &:focus::-webkit-input-placeholder {
+    color: inherit;
+  }
+  &:focus::-moz-placeholder {
+    color: inherit;
+  }
+  &:focus:-moz-placeholder {
+    color: inherit;
+  }
+  &:focus:-ms-input-placeholder {
+    color: inherit;
+  }
+}
+// миксины для form
+
+// миксины для текста
+@mixin hide-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin ul-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin pseudo ($content: '', $position: absolute, $display: block) {
+  content: $content;
+  position: $position;
+  display: $display;
+}
+// миксины для текста
+
+// миксин для ссылок
+@mixin link ($color-text: inherit, $color-active: inherit) {
+  color: $color-text;
+  &:hover,
+  &:focus{
+    outline: none;
+    color: $color-active;
+  }
+}
+// миксин для ссылок
+
+@mixin font-primary($size: false, $colour: false, $weight: false, $lh: false, $style: false) {
+  font-family: 'Metropolis', sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+  @if $style {
+    font-style: $style;
+  }
+}
+
+@mixin font-arial($size: false, $colour: false, $weight: false, $lh: false, $style: false) {
+  font-family: 'Arial';
+  @if $size {
+    font-size: $size;
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+  @if $style {
+    font-style: $style;
+  }
+}
+
+@mixin font-gotham($size: false, $colour: false, $weight: false, $lh: false, $style: false) {
+  font-family: 'Gotham Pro';
+  @if $size {
+    font-size: $size;
+  }
+  @if $colour {
+    color: $colour;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $lh {
+    line-height: $lh;
+  }
+  @if $style {
+    font-style: $style;
+  }
+}
+
+
+
+
+
+
+

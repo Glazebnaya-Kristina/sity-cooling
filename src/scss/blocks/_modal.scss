@@ -1,0 +1,90 @@
+.popup {
+  z-index: 4;
+  display: none;
+  //overflow-x: hidden;
+  //overflow-y: auto;
+  //overflow: hidden;
+  height: auto;
+  //padding: 25px 30px;
+  padding: 11px 15px;
+  //padding-bottom: 26px;
+  padding-bottom: 30px;
+  background-color: #fff;
+  //border: 1px solid $color-gold;
+  @media (min-width: $screen-md) {
+    padding: 11px 30px;
+    padding-bottom: 30px;
+    height: auto;
+  }
+
+  &--opened {
+    display: block;
+  }
+
+}
+
+.modal {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  &--opened {
+    display: flex;
+  }
+
+  &__overlay {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 3;
+    transition: .3s all;
+
+    &--opened {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 22px;
+    //color: $text-color-gray-dark3;
+    @media (min-width: $screen-md) {
+      font-size: 24px;
+    }
+    @media (min-width: $screen-xl) {
+      font-size: 36px;
+      line-height: 33px;
+    }
+  }
+
+  &__dialog {
+    //overflow-y: auto;
+  }
+
+  &__content {
+    margin-top: 48px;
+    width: 100%;
+  }
+}

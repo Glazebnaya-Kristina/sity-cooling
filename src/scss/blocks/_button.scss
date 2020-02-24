@@ -1,0 +1,43 @@
+.button {
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 14px 18px;
+  width: max-content;
+  //max-width: 222px;
+  font-family: inherit;
+  font-size: 23px;
+  font-weight: 700;
+  color: $white;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  background-color: transparent;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: $transition-time;
+  @media (max-width: $screen-lg) {
+    font-size: 18px;
+  }
+  
+  &--blue{
+    background-color: #3896ff;
+    &:hover{
+      background-color: #3686e6;
+    }
+  }
+
+  &--yellow{
+    background-color: #fe9d13;
+    &:hover{
+      background-color: #e18613;
+    }
+  }
+}
