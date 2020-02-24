@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('GothamPro.eot');
+    src: url('GothamPro.eot?#iefix') format('embedded-opentype'),
+        url('GothamPro.woff2') format('woff2'),
+        url('GothamPro.woff') format('woff'),
+        url('GothamPro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ArialMT';
+    src: url('ArialMT.eot');
+    src: url('ArialMT.eot?#iefix') format('embedded-opentype'),
+        url('ArialMT.woff2') format('woff2'),
+        url('ArialMT.woff') format('woff'),
+        url('ArialMT.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('Metropolis-Regular.eot');
+    src: url('Metropolis-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Metropolis-Regular.woff2') format('woff2'),
+        url('Metropolis-Regular.woff') format('woff'),
+        url('Metropolis-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial';
+    src: url('ArialMT_1.eot');
+    src: url('ArialMT_1.eot?#iefix') format('embedded-opentype'),
+        url('ArialMT_1.woff2') format('woff2'),
+        url('ArialMT_1.woff') format('woff'),
+        url('ArialMT_1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('GothamPro-Bold.eot');
+    src: url('GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('GothamPro-Bold.woff2') format('woff2'),
+        url('GothamPro-Bold.woff') format('woff'),
+        url('GothamPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('Metropolis-Bold.eot');
+    src: url('Metropolis-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Metropolis-Bold.woff2') format('woff2'),
+        url('Metropolis-Bold.woff') format('woff'),
+        url('Metropolis-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
