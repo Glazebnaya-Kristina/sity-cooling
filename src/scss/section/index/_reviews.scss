@@ -145,9 +145,16 @@
     border: none;
     background-color: transparent;
     outline: none;
+    cursor: pointer;
+    &:hover{
+      svg{
+        fill: #3896ff;
+      }
+    }
     svg{
       width: 100%;
       height: 100%;
+      transition: $transition-time;
     }
 
     &--next{

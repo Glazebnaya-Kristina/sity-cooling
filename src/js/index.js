@@ -17,6 +17,11 @@ $(document).ready(function () {
     ]
   });
 
+  new WOW().init({
+    live: true,
+    offset: 500
+  });
+
 });
 
 

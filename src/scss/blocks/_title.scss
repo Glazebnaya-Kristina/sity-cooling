@@ -25,4 +25,16 @@
       font-size: 26px;
     }
   }
+
+  &--white{
+    @include font-arial(22px, $white, 400);
+    text-transform: uppercase;
+    &:after{
+      @include pseudo;
+      bottom: -10px;
+      width: 77px;
+      height: 1px;
+      background-color: $white;
+    }
+  }
 }
