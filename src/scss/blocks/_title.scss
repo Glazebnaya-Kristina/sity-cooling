@@ -18,5 +18,11 @@
 
   &--other{
     @include font-gotham(56px, #0a2a6a, 700);
+    @media (max-width: $screen-xl) {
+      font-size: 40px;
+    }
+    @media (max-width: $screen-lg) {
+      font-size: 26px;
+    }
   }
 }
