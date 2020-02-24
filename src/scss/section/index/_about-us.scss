@@ -1,6 +1,125 @@
-.about-us{
-  $block-name:                &; // #{$block-name}__element
+.about-us {
+  $block-name: &; // #{$block-name}__element
+  padding: 160px 0 135px;
+  @media (max-width: $screen-lg) {
+    padding: 70px 0;
+  }
+  &__inner {
+    @include container;
+  }
 
-  height: 500px;
-  background-color: blue;
+  &__title {
+    text-align: center;
+
+    &:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__list {
+    @include ul-reset;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1720px;
+    margin: -15px auto;
+    margin-top: 150px;
+    @media (max-width: $screen-xl) {
+      max-width: 100%;
+      padding: 0 80px;
+    }
+    @media (max-width: $screen-lg) {
+      margin: 90px auto 0;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //flex-basis: 21%;
+    flex-basis: 361px;
+    width: 100%;
+    margin: 25px 15px;
+    padding-top: 190px;
+    @media (max-width: $screen-lg) {
+      flex-basis: 45%;
+      padding-top: 105px;
+    }
+    @media (max-width: $screen-md) {
+      flex-basis: 100%;
+    }
+
+    &:not(:first-child){
+      @media (max-width: $screen-md) {
+        margin-top: 30px;
+      }
+    }
+
+    &:after {
+      @include pseudo;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 248px;
+      height: 157px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      @media (max-width: $screen-lg) {
+        width: 150px;
+        height: 70px;
+      }
+    }
+
+    &--1 {
+      &:after {
+        background-image: url('../img/item-1.png');
+      }
+    }
+
+    &--2 {
+      &:after {
+        background-image: url('../img/item-2.png');
+      }
+    }
+
+    &--3 {
+      &:after {
+        background-image: url('../img/item-3.png');
+      }
+    }
+
+    &--4 {
+      &:after {
+        background-image: url('../img/item-4.png');
+      }
+    }
+  }
+
+  &__sutitle {
+    margin: 0;
+    text-align: center;
+    @include font-primary(36px, $black, 400);
+    @media (max-width: $screen-lg) {
+      font-size: 22px;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+    text-align: center;
+    @include font-primary(24px, #777777, 400);
+    @media (max-width: $screen-lg) {
+      font-size: 16px;
+    }
+    @media (max-width: $screen-md) {
+      max-width: 335px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+  }
 }

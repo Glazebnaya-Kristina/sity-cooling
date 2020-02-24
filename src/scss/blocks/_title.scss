@@ -1,13 +1,22 @@
 .title {
+  position: relative;
   margin: 0;
-  font-family: 'Cormorant Garamond';
-  font-weight: 700;
-  font-size: 30px;
-  text-align: center;
-  @media (min-width: $screen-md) {
-    font-size: 35px;
+  @include font-primary(45px, #0a2a6a, 400);
+
+  @media (max-width: $screen-lg) {
+    font-size: 26px;
   }
-  @media (min-width: $screen-xl) {
-    font-size: 50px;
+
+  &:after{
+    @include pseudo;
+    bottom: -15px;
+    width: 202px;
+    height: 3px;
+    background-color: #0a2a6a;
+  }
+
+
+  &--other{
+    @include font-gotham(56px, #0a2a6a, 700);
   }
 }
