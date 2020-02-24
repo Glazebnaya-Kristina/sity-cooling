@@ -1,0 +1,12 @@
+// подключение блоков
+//@import "blocks/";
+@import "templates/header";
+@import "templates/footer";
+
+// подключение секций
+@import "section/thank/thank";
+
+
+.header{
+  box-shadow: 0 0 14px 7px rgba(0, 0, 0, 0.07);
+}

@@ -1,0 +1,43 @@
+.thank{
+  &__inner{
+    @include container;
+    padding: 225px 15px 240px 130px;
+    @media (max-width: $screen-xl) {
+      padding: 150px 0;
+    }
+    @media (max-width: $screen-md) {
+      padding: 70px 15px;
+    }
+  }
+
+  &__title{
+    color: #007fd0;
+    &:after{
+      background-color: #007fd0;
+      @media (max-width: $screen-lg) {
+        width: 80px;
+      }
+    }
+  }
+
+  &__strong{
+    display: block;
+    margin-top: 75px;
+    @include font-gotham(34px, #007fd0, 700);
+    @media (max-width: $screen-lg) {
+      margin-top: 40px;
+      font-size: 22px;
+    }
+  }
+
+  &__text{
+    max-width: 685px;
+    margin-top: 45px;
+    @include font-primary(18px, $black, 400);
+    line-height: 22px;
+    @media (max-width: $screen-lg) {
+      margin-top: 25px;
+      font-size: 18px;
+    }
+  }
+}
