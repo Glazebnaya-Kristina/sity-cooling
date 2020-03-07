@@ -2,7 +2,7 @@
   $block-name: &; // #{$block-name}__element
   display: none;
 
-  @media (min-width: $screen-xl) {
+  @media (min-width: 1280px) {
     display: flex;
   }
 
@@ -12,12 +12,12 @@
     flex-direction: column;
     line-height: normal;
 
-    @media (min-width: $screen-xs) and (max-width: 1435px) {
+    @media (min-width: $screen-xs) and (max-width: 1279px) {
       @include container;
       padding: 93px 15px 30px !important;
     }
 
-    @media (min-width: $screen-xl) {
+    @media (min-width: 1280px) {
       flex-direction: row;
       align-items: center;
       padding: 0;
@@ -27,7 +27,7 @@
   &__item{
     &:not(:first-child) {
       margin-top: 17px;
-      @media (min-width: $screen-xl) {
+      @media (min-width: 1280px) {
         margin-top: 0;
         margin-left: 35px;
       }
@@ -38,8 +38,7 @@
     position: relative;
     @include font-arial(18px, $black);
     text-transform: uppercase;
-    &:hover,
-    &:focus{
+    &:hover{
       color: #3896ff;;
     }
 
@@ -53,17 +52,28 @@
       transition: all 0.3s;
       //transform-origin: center;
       display: none;
-      @media (min-width: $screen-xl) {
+      @media (min-width: 1280px) {
         display: block;
       }
     }
 
-    &:hover,
-    &:focus {
+    &:hover{
       outline: none;
       &:before {
         width: 120%;
         right: 0;
+      }
+    }
+
+    &--active{
+      color: #3896ff;;
+      &:before {
+        width: 120%;
+        right: 0;
+        display: none;
+        @media (min-width: 1280px) {
+          display: block;
+        }
       }
     }
   }

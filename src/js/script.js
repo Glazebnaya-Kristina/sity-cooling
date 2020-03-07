@@ -8,6 +8,7 @@ $(document).ready(function () {
     $('body').toggleClass('hidden')
   });
 
+
   //якорные ссылки
   var $anchor = $('.js-anchor');
 
@@ -16,6 +17,7 @@ $(document).ready(function () {
       event.preventDefault();
       var $that = $(this), hb = $('body, html');
 
+
       if ($that.is('button')) {
         hb.stop().animate({scrollTop: $('.' + $that.data('id')).offset().top}, 1000, 'swing');
       } else if ($that.is('a')) {
@@ -23,6 +25,45 @@ $(document).ready(function () {
       }
     });
   }
+
+
+  // подсвечивание пункт меню активной страниц
+  $('.navigation__list .navigation__link').each(function () {
+    var location = window.location.href;
+    var link = this.href;
+    if (location == link) {
+      $(this).addClass('navigation__link--active');
+    }
+  });
+
+
+  var hrefAnchor = $('.navigation__list li:nth-child(2)').children('a');
+  var hrefAnchor2 = $('.footer__content-link.js-anchor').children('a');
+
+  if ($('body').hasClass('page__body--index')) {
+    hrefAnchor.attr('href', '#description');
+    hrefAnchor.addClass('js-anchor');
+    hrefAnchor2.attr('href', '#description');
+    hrefAnchor2.addClass('js-anchor');
+
+    var $anchor2 = $('.js-anchor');
+
+    if ($anchor2.length) {
+      $anchor2.on('click', function (event) {
+
+        event.preventDefault();
+        var $that = $(this), hb = $('body, html');
+
+        if ($that.is('button')) {
+          hb.stop().animate({scrollTop: $('.' + $that.data('id')).offset().top}, 1000, 'swing');
+        } else if ($that.is('a')) {
+          hb.stop().animate({scrollTop: $('.' + $that.attr('href').replace('#', '')).offset().top}, 1000, 'swing');
+        }
+
+      });
+    }
+  }
+
 
   // модальные окна
   // document.addEventListener('DOMContentLoaded', function () {

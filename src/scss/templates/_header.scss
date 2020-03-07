@@ -12,37 +12,51 @@
   $block-name:                &; // #{$block-name}__element
 
   padding: 20px 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 2;
 
   &__inner{
-    @include container;
+    //@include container;
     display: flex;
     align-items: center;
+    padding: 0 30px;
+    @media (max-width: $screen-lg) {
+      padding: 0 15px;
+    }
   }
 
   &__logo-link{
     z-index: 7;
+
   }
   &__logo{
+    @media (max-width: $screen-xl) {
+      width: 200px;
+    }
     @media (max-width: $screen-lg) {
       width: 150px;
     }
   }
   &__burger{
     margin-left: auto;
-    @media (min-width: $screen-xl) {
+    @media (min-width: 1280px) {
       display: none;
     }
   }
 
   &__navigation-wrapper{
     background-color: #e4f2ff;
-    @media (min-width: $screen-xl) {
+    @media (min-width: 1280px) {
       background-color: transparent;
     }
   }
 
   &__navigation{
-    @media (min-width: $screen-xl) {
+    @media (min-width: 1280px) {
       display: flex;
       align-items: center;
       margin-left: auto;
@@ -51,11 +65,11 @@
 
   &__button{
     display: none;
-    @media (min-width: $screen-xl) {
+    @media (min-width: 1280px) {
       display: inline-flex;
       margin-left: 30px
     }
-    @media (min-width: $screen-xl) {
+    @media (min-width: 1280px) {
       display: inline-flex;
       margin-left: 67px;
     }

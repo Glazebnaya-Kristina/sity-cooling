@@ -32,6 +32,17 @@
       flex-direction: column;
     }
 
+    &:last-child{
+      margin-top: 335px;
+      @media (max-width: $screen-xl) {
+        margin-top: 155px;
+      }
+      @media (max-width: $screen-md) {
+        flex-direction: column;
+        margin-top: 25px;
+      }
+    }
+
     &--left {
       padding-left: 115px;
       @media (max-width: $screen-lg) {
@@ -52,7 +63,7 @@
       margin-top: 335px;
       padding-right: 80px;
       @media (max-width: $screen-xl) {
-        margin-top: 235px;
+        margin-top: 155px;
       }
       @media (max-width: $screen-lg) {
         padding-right: 30px;
@@ -83,10 +94,13 @@
   }
 
   &__img {
-    margin-top: -280px;
+    margin-top: -150px;
+    //object-fit: cover;
     @media (max-width: $screen-xl) {
-      height: 600px;
-      margin-top: -160px;
+      //height: 600px;
+      //margin-top: -80px;
+      height: 500px;
+      margin-top: -40px;
     }
     @media (max-width: $screen-md) {
       display: block;

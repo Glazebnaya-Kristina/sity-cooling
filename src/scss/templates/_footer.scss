@@ -18,6 +18,9 @@
   }
 
   &__logo{
+    @media (max-width: $screen-xl) {
+      width: 200px;
+    }
     @media (max-width: $screen-lg) {
       width: 150px;
     }

@@ -1,15 +1,16 @@
 .main-banner{
 
+  margin-top: 70px;
   padding: 355px 0 315px;
   background-image: url('../img/main-banner-bg.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 
+  //@media (max-width: $screen-xl) {
+  //  padding: 200px 0 155px;
+  //}
   @media (max-width: $screen-xl) {
-    padding: 200px 0 155px;
-  }
-  @media (max-width: $screen-lg) {
     padding: 150px 0 120px;
   }
 

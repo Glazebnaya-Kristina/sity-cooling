@@ -161,14 +161,14 @@ function compileJS() {
         message: "Error: <%= error.message %>"
       } )
     } ) )
-    .pipe( concat('script.js') )
+    // .pipe( concat('script.js') )
+    .pipe(newer( path.build.js ) )
     .pipe( uglify() )
     .pipe( rename({
       suffix: '.min'
     }) )
     .pipe( gulp.dest( path.build.js ) )
     .pipe( browserSync.stream() );
-
 }
 
 function assemblyVendor() {
